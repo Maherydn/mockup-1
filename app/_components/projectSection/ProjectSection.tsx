@@ -1,6 +1,6 @@
 const ProjectSection = () => {
   return (
-    <section className="h-fit w-full flex flex-col gap-6 lg:px-0 px-4 my-24">
+    <section className="h-fit w-full flex flex-col gap-6 lg:px-0 px-4 mt-24 md:mt-0 ">
       <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold text-xl text-white/80">
         <h2>My</h2>
         <div className="w-2 h-2 rounded-full bg-yellow"></div>

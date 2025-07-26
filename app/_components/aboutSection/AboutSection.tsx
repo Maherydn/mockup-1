@@ -40,7 +40,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="md:h-screen h-fit w-full flex flex-col items-center justify-center gap-10 px-4 lg:px-0">
+    <section className="md:min-h-screen h-fit w-full flex flex-col items-center justify-center gap-10 px-4 lg:px-0">
       {/* Nom en haut */}
       <div className="flex items-center gap-1 lg:gap-2 uppercase font-bold text-xl lg:text-2xl text-white/80 w-full">
         <h2>brian</h2>

@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className="font-inter bg-[#2A2B2A] h-full w-full flex justify-center relative "
+        className="font-inter bg-[#1F1F1F] h-full w-full flex justify-center relative "
       >
         <Header />
         <main className=" lg:w-5xl w-full">

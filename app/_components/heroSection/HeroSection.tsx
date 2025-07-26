@@ -30,7 +30,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center justify-center gap-10 mb-4 relative">
+    <section className="h-screen min-h-fit w-full flex flex-col items-center justify-center gap-10 mb-4 relative">
       <div className="h-fit w-full px-6 flex flex-col items-center justify-center gap-2">
         <p className="text-yellow lg:text-md text-xs font-bold uppercase">
           Available for Freelance
