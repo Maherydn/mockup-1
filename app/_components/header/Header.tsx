@@ -1,8 +1,40 @@
+"use client"
+
 import { MenuBurgerIcon } from "@/app/_assets/icon";
+import gsap from "gsap";
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
+  useEffect(() => {
+    // Créer l'animation pour l'élément .header
+    const showAnim = gsap.from('.header', { 
+      y: -100,   
+      paused: true, 
+      duration: 0.3, 
+      scrub: 1, 
+    }).progress(1); // Commence l'animation inversée
+
+    // Utilisation de ScrollTrigger sans spécifier un trigger
+    ScrollTrigger.create({
+      start: "top top",  
+      end: "bottom bottom",
+      scrub: 1,       // L'animation est lissée et suivie par le défilement
+      onUpdate: (self) => {
+        // Vérifie la direction du défilement
+        if (self.direction === -1) {
+          showAnim.play();
+        } else {
+          showAnim.reverse(); 
+        }
+      }
+    });
+
+  }, []);
   return (
-    <header className=" h-24 lg:w-5xl w-full lg:px-0 px-2 flex items-center border-b border-slate-300/50 justify-between  fixed top-0 z-20">
+    <header className=" h-18 lg:w-5xl w-full lg:px-12 px-6 flex items-center justify-between  fixed top-0 z-20 bg-gray-900/60 rounded-full mt-0.5 header">
       <div className="flex justify-around h-14 w-52 ">
         <div className="w-14 h-full bg-slate-200 rounded-lg">
           {/* <img src="#" alt="profil" /> */}
@@ -12,7 +44,7 @@ const Header = () => {
           <h4 className="text-lg text-white/60">Developper</h4>
         </div>
       </div>
-      <div className="w-fit h-14 lg:flex items-center gap-10 hidden">
+      <div className="w-fit h-14 lg:flex items-center gap-10 hidden px-2">
         <ul className="w-96 h-full flex justify-around items-center text-xl capitalize text-white/60 hover:text-white/80 duration-300 cursor-pointer ">
           <li>
             <a href="#">home</a>
