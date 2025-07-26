@@ -9,7 +9,7 @@ const ContactSection = () => {
         <h2>me</h2>
       </div>
       <div className="w-full h-fit flex md:flex-row flex-col gap-4 md:px-0 px-4">
-        <div className="min-w-0 md:w-1/2 w-full h-full flex flex-col gap-4">
+        <div className="min-w-0 md:w-1/2 w-full flex-1 flex flex-col gap-4">
           <div className="h-1/2 w-full min-w-0 min-h-0 flex flex-col justify-between  px-4 py-6  rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E] gap-4">
             <h3 className="uppercase text-yellow text-xs font-semibold">
               contact with me

@@ -34,7 +34,7 @@ const Header = () => {
 
   }, []);
   return (
-    <header className=" h-18 lg:w-5xl w-full lg:px-12 px-6 flex items-center justify-between  fixed top-0 z-20 bg-gray-900/60 rounded-full mt-0.5 header">
+    <header className=" h-18 lg:w-5xl w-full lg:px-12 px-6 flex items-center justify-between  fixed top-0 z-20 bg-gray-900/60 rounded-full mt-1 header">
       <div className="flex justify-around h-14 w-52 ">
         <div className="w-14 h-full bg-slate-200 rounded-lg">
           {/* <img src="#" alt="profil" /> */}
