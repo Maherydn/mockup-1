@@ -1,6 +1,46 @@
+"use client"
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutSection = () => {
+  const stats = [
+    { value: 7, suffix: "+", label: "years of experience" },
+    { value: 50, suffix: "+", label: "project completed" },
+    { value: 30, suffix: "+", label: "happy client" },
+  ];
+
+  const refs = useRef<(HTMLParagraphElement | null)[]>([]);
+
+  useEffect(() => {
+    refs.current.forEach((el, i) => {
+      if (!el) return;
+
+      const compteur = { val: 0 };
+
+      gsap.to(compteur, {
+        val: stats[i].value,
+        duration: 2,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%", // quand le haut de l’élément est à 80% du viewport
+          toggleActions: "play none none none",
+        },
+        onUpdate: () => {
+          if (el) {
+            el.innerText = `${Math.floor(compteur.val)}${stats[i].suffix}`;
+          }
+        },
+      });
+    });
+  }, []);
+
   return (
-    <section className="md:h-screen h-fit w-full flex flex-col items-center justify-center gap-10 px-4 lg:px-0 ">
+    <section className="md:h-screen h-fit w-full flex flex-col items-center justify-center gap-10 px-4 lg:px-0">
       {/* Nom en haut */}
       <div className="flex items-center gap-1 lg:gap-2 uppercase font-bold text-xl lg:text-2xl text-white/80 w-full">
         <h2>brian</h2>
@@ -54,18 +94,21 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Stats */}
+      {/* Stats animés */}
       <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl">
-        {[
-          { number: "7+", label: "years of experience" },
-          { number: "50+", label: "project completed" },
-          { number: "30+", label: "happy client" },
-        ].map((item, index) => (
+        {stats.map((item, index) => (
           <div
             key={index}
             className="flex flex-col items-center justify-center gap-2 w-full md:w-1/3 h-32 py-4 rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E]"
           >
-            <p className="text-4xl font-bold text-white/90">{item.number}</p>
+            <p
+              className="text-4xl font-bold text-white/90"
+              ref={(el) => {
+                refs.current[index] = el;
+              }}
+            >
+              0{item.suffix}
+            </p>
             <p className="text-lg uppercase text-white/85">{item.label}</p>
           </div>
         ))}

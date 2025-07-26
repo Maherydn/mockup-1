@@ -2,7 +2,7 @@ import { MenuBurgerIcon } from "@/app/_assets/icon";
 
 const Header = () => {
   return (
-    <header className=" h-24 lg:w-5xl w-full lg:px-0 px-2 flex items-center border-b border-slate-300/50 justify-between  fixed top-0 ">
+    <header className=" h-24 lg:w-5xl w-full lg:px-0 px-2 flex items-center border-b border-slate-300/50 justify-between  fixed top-0 z-20">
       <div className="flex justify-around h-14 w-52 ">
         <div className="w-14 h-full bg-slate-200 rounded-lg">
           {/* <img src="#" alt="profil" /> */}
