@@ -1,3 +1,5 @@
+import { GithubIcon, InstaIcon, LinkedinIcon } from "@/app/_assets/icon";
+
 const ContactSection = () => {
   return (
     <section className="h-screen w-full flex flex-col justify-center items-center gap-12">
@@ -6,9 +8,34 @@ const ContactSection = () => {
         <div className="w-2 h-2 rounded-full bg-yellow"></div>
         <h2>me</h2>
       </div>
-      <div className="w-full h-fit flex gap-4">
-        <div className="min-w-0 w-1/2 h-full bg-slate-300"></div>
-        <div className="min-w-0 w-1/2 h-fit px-4 py-6 rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E]">
+      <div className="w-full h-fit flex md:flex-row flex-col gap-4 px-4">
+        <div className="min-w-0 md:w-1/2 w-full h-full flex flex-col gap-4">
+          <div className="h-1/2 w-full min-w-0 min-h-0 flex flex-col justify-between  px-4 py-6  rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E] gap-4">
+            <h3 className="uppercase text-yellow-500 text-xs font-semibold">
+              contact with me
+            </h3>
+            <div className="flex w-full gap-4">
+              <LinkedinIcon />
+              <GithubIcon />
+              <InstaIcon />
+            </div>
+          </div>
+          <div className="flex md:flex-row flex-col md:h-1/2 h-full w-full min-w-0 min-h-0 gap-4">
+            <div className="h-full md:w-1/2 w-full min-w-0 min-h-0 flex flex-col justify-between  px-4 py-6  rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E] gap-4">
+              <h3 className="uppercase text-yellow-500 text-xs font-semibold">
+                email
+              </h3>
+              <p className="text-lg text-white/50">toto@example.com</p>
+            </div>
+            <div className="h-full md:w-1/2 w-full min-w-0 min-h-0 flex flex-col justify-between  px-4 py-6  rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E] gap-4">
+              <h3 className="uppercase text-yellow-500 text-xs font-semibold">
+                phone
+              </h3>
+              <p className="text-lg text-white/50">+1 123-456-789</p>
+            </div>
+          </div>
+        </div>
+        <div className="min-w-0 md:w-1/2 w-full h-fit px-4 py-6  rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E]">
           <form action="#" className="space-y-8">
             <div className="flex gap-4">
               <div className="flex flex-col gap-2">

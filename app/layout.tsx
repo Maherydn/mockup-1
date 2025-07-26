@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/header/Header";
+import Footer from "./_components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -19,7 +20,10 @@ export default function RootLayout({
         className="font-inter bg-[#2A2B2A] h-full w-full flex justify-center relative "
       >
         <Header />
-        <main className=" lg:w-5xl w-full">{children}</main>
+        <main className=" lg:w-5xl w-full">
+          {children} 
+          <Footer />
+        </main>
       </body>
     </html>
   );
