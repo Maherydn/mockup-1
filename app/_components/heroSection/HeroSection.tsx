@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   BottomIcon,
@@ -13,19 +13,19 @@ import { useEffect } from "react";
 const HeroSection = () => {
   useEffect(() => {
     gsap.to(".balleTop", {
-      y: 12, 
-      duration: 0.8, 
-      repeat: -1, 
-      yoyo: true, 
-      ease: "power1.inOut", 
+      y: 12,
+      duration: 0.8,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
     });
 
     gsap.to(".balleBottom", {
-      y: -12, 
-      duration: 0.8, 
-      repeat: -1, 
-      yoyo: true, 
-      ease: "power1.inOut", 
+      y: -12,
+      duration: 0.8,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
     });
   }, []);
 
@@ -57,16 +57,16 @@ const HeroSection = () => {
       </button>
 
       {/* icon */}
-      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute top-36 left-24 flex justify-center items-center rounded-lg balleTop ">
+      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute top-36 md:left-24 left-12 flex justify-center items-center rounded-lg balleTop ">
         <TailwindIcon />
       </div>
-      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute top-36 right-24 flex justify-center items-center rounded-lg balleTop">
+      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute top-36 md:right-24 right-12 flex justify-center items-center rounded-lg balleTop">
         <LaravelIcon />
       </div>
-      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute bottom-36 left-24 flex justify-center items-center rounded-lg balleBottom">
+      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute bottom-36 md:left-24 left-12 flex justify-center items-center rounded-lg balleBottom">
         <MySQLIcon />
       </div>
-      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute bottom-36 right-24 flex justify-center items-center rounded-lg balleBottom">
+      <div className="w-14 h-14 bg-gradient-to-r from-[#323332] to-[#3E403E] absolute bottom-36 md:right-24 right-12 flex justify-center items-center rounded-lg balleBottom">
         <NextJsIcon />
       </div>
     </section>
