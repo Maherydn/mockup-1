@@ -41,7 +41,7 @@ export default function Home() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          zIndex:10,
+          zIndex: 10,
           ease: "power2.out",
         }
       );
@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <div className="h-full w-full">
-      {/* Section scrollée + pin + timeline */}
+      
       <section ref={sectionRef} className="relative h-screen w-full">
         <div
           ref={heroRef}
