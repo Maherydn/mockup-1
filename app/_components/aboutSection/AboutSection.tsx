@@ -1,58 +1,59 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import {
+  LaravelIcon,
+  MySQLIcon,
+  NextJsIcon,
+  TailwindIcon,
+} from "@/app/_assets/icon";
 
 const AboutSection = () => {
-  const stats = [
-    { value: 7, suffix: "+", label: "years of experience" },
-    { value: 50, suffix: "+", label: "project completed" },
-    { value: 30, suffix: "+", label: "happy client" },
+  const techs = [
+    { name: "TailwindCSS", icon: <TailwindIcon /> },
+    { name: "Laravel", icon: <LaravelIcon /> },
+    { name: "Next.js", icon: <NextJsIcon /> },
+    { name: "MySQL", icon: <MySQLIcon /> },
+    { name: "TailwindCSS", icon: <TailwindIcon /> },
+    { name: "Laravel", icon: <LaravelIcon /> },
+    { name: "Next.js", icon: <NextJsIcon /> },
+    { name: "MySQL", icon: <MySQLIcon /> },
+    { name: "TailwindCSS", icon: <TailwindIcon /> },
+    { name: "Laravel", icon: <LaravelIcon /> },
+    { name: "Next.js", icon: <NextJsIcon /> },
+    { name: "MySQL", icon: <MySQLIcon /> },
   ];
 
-  const refs = useRef<(HTMLParagraphElement | null)[]>([]);
-
-  useEffect(() => {
-    refs.current.forEach((el, i) => {
-      if (!el) return;
-
-      const compteur = { val: 0 };
-
-      gsap.to(compteur, {
-        val: stats[i].value,
-        duration: 2,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%", // quand le haut de l’élément est à 80% du viewport
-          toggleActions: "play none none none",
-        },
-        onUpdate: () => {
-          if (el) {
-            el.innerText = `${Math.floor(compteur.val)}${stats[i].suffix}`;
-          }
-        },
-      });
-    });
-  }, []);
-
   return (
-    <section className="md:min-h-screen h-fit w-full flex flex-col items-center justify-center gap-10 px-4 lg:px-0">
-      {/* Nom en haut */}
+    <section className="h-full w-full flex flex-col items-center justify-center gap-4 px-4 lg:px-0">
       <div className="flex items-center gap-1 lg:gap-2 uppercase font-bold text-xl lg:text-2xl text-white/80 w-full">
         <h2>brian</h2>
         <div className="w-2 h-2 rounded-full bg-yellow"></div>
         <h2>santos</h2>
       </div>
 
-      {/* Description + Info */}
-      <div className="flex flex-col md:flex-row justify-between gap-6 w-full max-w-6xl">
-        <h3 className="text-4xl text-white/90 md:w-1/2">
-          Lead product engineer <br /> and creative director.
-        </h3>
+      <div className="flex flex-col md:flex-row justify-between md:gap-6 gap-0 w-full max-w-6xl">
+        <div className="flex flex-col h-full md:gap-6 gap-4 md:w-1/2 ">
+          <h3 className="text-4xl text-white/90 w-full">
+            Lead product engineer <br /> and creative director.
+          </h3>
+          <div className="flex items-center justify-start md:gap-6 gap-0 flex-wrap">
+            {techs.map((tech, index) => (
+              <div
+                key={index}
+                className="group relative w-14 h-14 flex justify-center items-center rounded-lg transition duration-300 cursor-pointer"
+              >
+                <div className="transition-transform duration-300 group-hover:-translate-y-1">
+                  {tech.icon}
+                </div>
+
+                <span className="absolute bottom-full mb-0 px-2 py-1 text-xs text-white bg-slate-900/60 rounded opacity-0 group-hover:opacity-100 transition duration-300 whitespace-nowrap">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="flex flex-col gap-6 h-fit md:w-1/2 w-full">
           <p className="text-xl text-white/85">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -64,7 +65,6 @@ const AboutSection = () => {
             penatibus et
           </p>
 
-          {/* Infos perso */}
           <div className="flex justify-between w-full flex-wrap gap-4">
             <div className="w-fit -space-y-1.5">
               <h4 className="uppercase text-xs md:text-sm text-yellow">
@@ -92,26 +92,6 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Stats animés */}
-      <div className="flex flex-col md:flex-row gap-4 w-full max-w-6xl">
-        {stats.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center gap-2 w-full md:w-1/3 h-32 py-4 rounded-lg bg-gradient-to-r from-[#323332] to-[#3E403E]"
-          >
-            <p
-              className="text-4xl font-bold text-white/90"
-              ref={(el) => {
-                refs.current[index] = el;
-              }}
-            >
-              0{item.suffix}
-            </p>
-            <p className="text-lg uppercase text-white/85">{item.label}</p>
-          </div>
-        ))}
       </div>
     </section>
   );

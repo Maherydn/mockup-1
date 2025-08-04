@@ -5,3 +5,7 @@
   --font-inter: "Inter", sans-serif; 
   --color-yellow: #F5F749;
 }
+
+html {
+  scroll-behavior: smooth;
+}
