@@ -20,7 +20,7 @@ export default function RootLayout({
         className="font-inter bg-[#1F1F1F] h-full w-full flex justify-center relative "
       >
         <Header />
-        <main className=" lg:w-5xl w-full">
+        <main className=" lg:w-5xl w-full overflow-x-hidden">
           {children} 
           <Footer />
         </main>
