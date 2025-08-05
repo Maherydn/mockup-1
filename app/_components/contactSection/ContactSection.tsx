@@ -2,7 +2,7 @@ import { GithubIcon, InstaIcon, LinkedinIcon } from "@/app/_assets/icon";
 
 const ContactSection = () => {
   return (
-    <section className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-12 mt-24 md:mt-0">
+    <section className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-12 mt-24 md:mt-0 px-4 xl:px-0">
       <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold text-xl text-white/80">
         <h2>contact</h2>
         <div className="w-2 h-2 rounded-full bg-yellow"></div>
