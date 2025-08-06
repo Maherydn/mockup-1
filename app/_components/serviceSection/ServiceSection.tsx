@@ -28,9 +28,9 @@ const services = [
 
 const ServiceSection = () => {
   return (
-    <section id="services" className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-10 px-4 xl:px-0 mt-24 md:mt-0">
+    <section id="services" className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-20 px-4 xl:px-0 mt-24 md:mt-0 pt-20 md:pt-0">
       {/* Titre principal */}
-      <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold text-xl text-white/80">
+      <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold md:text-4xl text-2xl text-white/80">
         <h2>My</h2>
         <div className="w-2 h-2 rounded-full bg-yellow"></div>
         <h2>Services</h2>

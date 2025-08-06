@@ -1,26 +1,30 @@
 "use client";
 
 import {
+  DockerIcon,
+  FigmaIcon,
+  GitIcon,
   LaravelIcon,
+  LinuxIcon,
   MySQLIcon,
   NextJsIcon,
+  PostmanIcon,
   TailwindIcon,
+  WordpressIcon,
 } from "@/app/_assets/icon";
 
 const AboutSection = () => {
   const techs = [
-    { name: "TailwindCSS", icon: <TailwindIcon /> },
     { name: "Laravel", icon: <LaravelIcon /> },
+    { name: "TailwindCSS", icon: <TailwindIcon /> },
     { name: "Next.js", icon: <NextJsIcon /> },
     { name: "MySQL", icon: <MySQLIcon /> },
-    { name: "TailwindCSS", icon: <TailwindIcon /> },
-    { name: "Laravel", icon: <LaravelIcon /> },
-    { name: "Next.js", icon: <NextJsIcon /> },
-    { name: "MySQL", icon: <MySQLIcon /> },
-    { name: "TailwindCSS", icon: <TailwindIcon /> },
-    { name: "Laravel", icon: <LaravelIcon /> },
-    { name: "Next.js", icon: <NextJsIcon /> },
-    { name: "MySQL", icon: <MySQLIcon /> },
+    { name: "Git", icon: <GitIcon /> },
+    { name: "Docker", icon: <DockerIcon /> },
+    { name: "Figma", icon: <FigmaIcon /> },
+    { name: "Postman", icon: <PostmanIcon /> },
+    { name: "WordPress", icon: <WordpressIcon /> },
+    { name: "Linux", icon: <LinuxIcon /> },
   ];
 
   return (
@@ -36,7 +40,7 @@ const AboutSection = () => {
           <h3 className="text-4xl text-white/90 w-full">
             Lead product engineer <br /> and creative director.
           </h3>
-          <div className="flex items-center justify-start md:gap-6 gap-0 flex-wrap">
+          <div className="flex items-center justify-start md:gap-2 gap-0 flex-wrap">
             {techs.map((tech, index) => (
               <div
                 key={index}
