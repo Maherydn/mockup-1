@@ -53,7 +53,7 @@ const Header = () => {
             <img src="https://avatar.iran.liara.run/public/41" alt="profil" />
           </div>
           <div className="flex flex-col h-16 justify-center">
-            <h3 className="text-xl text-white/80">Brian Santos</h3>
+            <h3 className="text-xl text-white/80">Mahery Daniel</h3>
             <h4 className="text-lg text-white/60">Developper</h4>
           </div>
         </div>

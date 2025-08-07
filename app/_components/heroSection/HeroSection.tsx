@@ -50,9 +50,9 @@ const HeroSection = () => {
         <h2
           ref={titleRef}
           className="text-center lg:text-6xl text-3xl font-bold text-white/95 leading-snug w-full text-wrap"
-          aria-label="Hey, I’m Brian. A Creative Developer"
+          aria-label="Hey, I’m Daniel. A Creative Developer"
         >
-          Hey, I’m Brian.
+          Hey, I’m Daniel.
           <br />A Creative Developer
         </h2>
         {/* Le reste sans animation */}
