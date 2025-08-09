@@ -1,154 +1,121 @@
+import { ProjectCard } from "./ProjectCard";
+
+interface Project {
+  id: string;
+  imageUrl: string;
+  title: string;
+  description: string;
+  categories: string[];
+  buttonLabel: string;
+  containerClassName?: string;
+  overlayOpacity?: string;
+}
+
+// Données projets
+const bigLeftProject: Project = {
+  id: "1",
+  imageUrl: "/landing.jpg",
+  title: "Bijoux & deco",
+  description:
+    "The landing page highlights a delicious selection of chocolates, cakes and ice creams, with a neat presentation of the products.",
+  categories: ["design", "development"],
+  buttonLabel: "Show demo",
+  containerClassName: "w-full h-60",
+  overlayOpacity: "bg-black/70",
+};
+
+const leftSmallProjects: Project[] = [
+  {
+    id: "2",
+    imageUrl: "/portfolio-1.png",
+    title: "portfolio",
+    description:
+      "The landing page features a minimalist and refined aesthetic, presenting key portfolio pieces with bold typography, smooth animations, and a user-friendly layout.",
+    categories: ["development"],
+    buttonLabel: "Show demo",
+    containerClassName: "w-1/2 min-w-0 h-full",
+    overlayOpacity: "bg-black/10",
+  },
+  {
+    id: "3",
+    imageUrl: "/appGestionStagiaire.png",
+    title: "gestion intern",
+    description:
+      "The back office allows you to manage interns, offering simple and efficient management of their follow-ups, built with Symfony for the backend and React for the frontend.",
+    categories: ["development"],
+    buttonLabel: "Show code",
+    containerClassName: "w-1/2 min-w-0 h-full",
+    overlayOpacity: "bg-black/70",
+  },
+];
+
+const rightProjectsBig: Project = {
+  id: "6",
+  imageUrl: "/budget-tracker.png",
+  title: "Budget Tracker",
+  description:
+    "A personal finance app that allows users to manage their income and expenses month by month...",
+  categories: ["design", "development"],
+  buttonLabel: "Show code",
+  containerClassName: "w-full h-60",
+  overlayOpacity: "bg-black/70",
+};
+
+const rightSmallProjects: Project[] = [
+  {
+    id: "4",
+    imageUrl: "/blog-1.png",
+    title: "blog",
+    description:
+      "A modern platform for sharing posts and ideas effortlessly. Built with Laravel on the backend and Next.js on the frontend...",
+    categories: ["development"],
+    buttonLabel: "Show code",
+    containerClassName: "w-1/2 min-w-0 h-full",
+    overlayOpacity: "bg-black/70",
+  },
+  {
+    id: "5",
+    imageUrl: "/chat.png",
+    title: "Chat",
+    description:
+      "An instant messaging app allows users to exchange messages in real time quickly and seamlessly...",
+    categories: ["development"],
+    buttonLabel: "Show code",
+    containerClassName: "w-1/2 min-w-0 h-full",
+    overlayOpacity: "bg-black/70",
+  },
+];
+
 const ProjectSection = () => {
   return (
-    <section id="projects" className="h-fit w-full flex flex-col gap-20 xl:px-0 px-4 mt-24 md:mt-0 pt-14 ">
+    <section
+      id="projects"
+      className="h-fit w-full flex flex-col gap-20 xl:px-0 px-4 mt-24 md:mt-0 pt-14"
+    >
       <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold md:text-4xl text-2xl text-white/80">
         <h2>My</h2>
         <div className="w-2 h-2 rounded-full bg-yellow"></div>
         <h2>Projects</h2>
       </div>
+
       <div className="flex md:flex-row flex-col w-full gap-4">
-        {/* project 1 */}
-        <div className=" flex flex-col gap-4 md:max-w-1/2 min-w-0 w-full">
-          <div className="w-full h-60 relative rounded-lg overflow-hidden group">
-            <div className="absolute inset-0 bg-[url('/image.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-            <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-              <div className="flex items-center justify-center lg:gap-4 gap-2 uppercase font-semibold text-sm text-yellow">
-                <h2>design</h2>
-                <div className="w-1 h-1 rounded-full bg-yellow"></div>
-                <h2>development</h2>
-              </div>
-              <div>
-                <h3 className="text-xl text-white/80 capitalize">
-                  charity landing page
-                </h3>
-                <p className="text-xs text-white/40">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis,
-                </p>
-              </div>
-            </div>
-          </div>
-
+        {/* Left big project + small projects */}
+        <div className="flex flex-col gap-4 md:max-w-1/2 min-w-0 w-full cursor-pointer">
+          <ProjectCard {...bigLeftProject} />
           <div className="flex gap-4 h-96">
-            {/* project 2 */}
-            <div className="w-1/2 min-w-0 h-full relative rounded-lg overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 bg-[url('/image2.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-              <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-                <div className="uppercase font-semibold text-sm text-yellow">
-                  <h2>development</h2>
-                </div>
-                <div>
-                  <h3 className="text-xl text-white/80 capitalize">
-                    History Website
-                  </h3>
-                  <p className="text-xs text-white/40">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                    natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Donec quam felis,
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* project 3 */}
-            <div className="w-1/2 min-w-0 h-full relative rounded-lg overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 bg-[url('/image3.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-              <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-                <div className="uppercase font-semibold text-sm text-yellow">
-                  <h2>development</h2>
-                </div>
-                <div>
-                  <h3 className="text-xl text-white/80 capitalize">
-                    Photography App
-                  </h3>
-                  <p className="text-xs text-white/40">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                    natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Donec quam felis,
-                  </p>
-                </div>
-              </div>
-            </div>
+            {leftSmallProjects.map((proj) => (
+              <ProjectCard key={proj.id} {...proj} />
+            ))}
           </div>
         </div>
 
-        <div className=" flex md:flex-col-reverse flex-col gap-4 md:max-w-1/2 min-w-0 w-full">
-
-          {/* project 6 */}
-          <div className="w-full h-60 relative rounded-lg overflow-hidden group">
-            <div className="absolute inset-0 bg-[url('/image6.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-            <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-              <div className="flex items-center justify-center lg:gap-4 gap-2 uppercase font-semibold text-sm text-yellow">
-                <h2>design</h2>
-                <div className="w-1 h-1 rounded-full bg-yellow"></div>
-                <h2>development</h2>
-              </div>
-              <div>
-                <h3 className="text-xl text-white/80 capitalize">
-                  Electric Bike Landing Page
-                </h3>
-                <p className="text-xs text-white/40">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis,
-                </p>
-              </div>
-            </div>
-          </div>
-
+        {/* Right side projects */}
+        <div className="flex md:flex-col-reverse flex-col gap-4 md:max-w-1/2 min-w-0 w-full">
+          <ProjectCard {...rightProjectsBig} />
           <div className="flex gap-4 h-96">
-            {/* project 4 */}
-            <div className="w-1/2 min-w-0 h-full relative rounded-lg overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 bg-[url('/image4.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-              <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-                <div className="uppercase font-semibold text-sm text-yellow">
-                  <h2>development</h2>
-                </div>
-                <div>
-                  <h3 className="text-xl text-white/80 capitalize">
-                    Habit App Design
-                  </h3>
-                  <p className="text-xs text-white/40">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                    natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Donec quam felis,
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* project 5 */}
-            <div className="w-1/2 min-w-0 h-full relative rounded-lg overflow-hidden group cursor-pointer">
-              <div className="absolute inset-0 bg-[url('/image5.png')] bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110" />
-
-              <div className="relative z-10 flex flex-col justify-between items-start p-4 h-full">
-                <div className="uppercase font-semibold text-sm text-yellow">
-                  <h2>development</h2>
-                </div>
-                <div>
-                  <h3 className="text-xl text-white/80 capitalize">
-                    Interesting App
-                  </h3>
-                  <p className="text-xs text-white/40">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                    natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Donec quam felis,
-                  </p>
-                </div>
-              </div>
-            </div>
+            {rightSmallProjects.map((proj) => (
+              <ProjectCard key={proj.id} {...proj} />
+            ))}
           </div>
         </div>
       </div>
