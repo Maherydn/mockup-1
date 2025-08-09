@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MenuBurgerIcon } from "@/app/_assets/icon";
 import gsap from "gsap";
+import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,11 +50,17 @@ const Header = () => {
     <>
       <header className="h-18 lg:w-5xl w-full lg:px-12 px-6 flex items-center justify-between fixed top-0 z-50 bg-gray-900/60 rounded-full mt-1">
         <div className="flex justify-around h-14 w-52">
-          <div className="w-14 h-full rounded-lg">
-            <img src="https://avatar.iran.liara.run/public/41" alt="profil" />
+          <div className="w-14 h-14 rounded-full bg-white/80 overflow-hidden">
+            <Image
+              src="/avatar.png"
+              alt="avatar"
+              className="w-full h-full"
+              width={100}
+              height={100}
+            />
           </div>
           <div className="flex flex-col h-16 justify-center">
-            <h3 className="text-xl text-white/80">Brian Santos</h3>
+            <h3 className="text-xl text-white/80">Mahery Daniel</h3>
             <h4 className="text-lg text-white/60">Developper</h4>
           </div>
         </div>

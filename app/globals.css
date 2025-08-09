@@ -4,6 +4,16 @@
 @theme inline {
   --font-inter: "Inter", sans-serif; 
   --color-yellow: #F5F749;
+  --bg-hero: url('/chat.png');
+
+  @keyframes tilt-wobble {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(5deg); }
+    60%  { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  --animate-tilt-wobble: tilt-wobble 0.6s ease-in-out;
 }
 
 html {
