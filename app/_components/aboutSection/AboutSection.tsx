@@ -41,7 +41,7 @@ const infos = [
 
 const AboutSection = () => {
   return (
-    <section className="h-full w-full flex flex-col items-center justify-center gap-4 px-4 xl:px-0">
+    <div className="h-full w-full flex flex-col items-center justify-center gap-4 px-4 xl:px-0">
       {/* Header Name */}
       <div className="flex items-center gap-1 lg:gap-2 uppercase font-bold text-xl lg:text-2xl text-white/80 w-full">
         <h2>mahery</h2>
@@ -81,7 +81,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

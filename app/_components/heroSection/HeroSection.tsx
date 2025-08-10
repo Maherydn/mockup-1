@@ -1,13 +1,10 @@
-"use client";
-
 import AnimatedTitle from "./AnimatedTitle";
 import { DownloadButton } from "./DonwloadButton";
 import { SkillTags } from "./SkillTags";
 
-
 const HeroSection = () => {
   return (
-    <section
+    <div
       id="hero"
       className="h-full w-full flex flex-col items-center justify-center gap-10 mb-4 relative"
     >
@@ -15,11 +12,11 @@ const HeroSection = () => {
         <p className="text-yellow lg:text-md text-xs font-bold uppercase">
           Available for Freelance
         </p>
-        <AnimatedTitle  />
+        <AnimatedTitle />
         <SkillTags skills={["design", "developpement", "webflow"]} />
       </div>
       <DownloadButton />
-    </section>
+    </div>
   );
 };
 
