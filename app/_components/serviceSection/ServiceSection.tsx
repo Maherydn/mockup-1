@@ -1,9 +1,7 @@
-"use client";
-
 import { ServiceCard } from "./ServiceCard";
 import { BrandingIcon, DesignIcon, DevelopmentIcon } from "@/app/_assets/icon";
 
- const services = [
+const services = [
   {
     id: "01",
     title: "Branding",
@@ -30,10 +28,12 @@ import { BrandingIcon, DesignIcon, DevelopmentIcon } from "@/app/_assets/icon";
   },
 ];
 
-
 const ServiceSection = () => {
   return (
-    <section id="services" className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-20 px-6 mt-24 md:mt-0 pt-20 md:pt-0">
+    <section
+      id="services"
+      className="md:min-h-screen h-fit w-full flex flex-col justify-center items-center gap-20 px-6 mt-24 md:mt-0 pt-20 md:pt-0"
+    >
       {/* Titre principal */}
       <div className="flex items-center justify-center lg:gap-2 gap-1 uppercase font-bold md:text-4xl text-2xl text-white/80">
         <h2>My</h2>
