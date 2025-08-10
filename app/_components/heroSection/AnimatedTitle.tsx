@@ -14,12 +14,11 @@ const AnimatedTitle = () => {
 
     const split = new SplitText(titleRef.current, { type: "chars" });
 
-    gsap.set(split.chars, { opacity: 0, y: 0 });
+    gsap.set(split.chars, { opacity: 0 });
 
     gsap.to(split.chars, {
       duration: 0.05,
       opacity: 1,
-      y: 0,
       ease: "power1.inOut",
       stagger: 0.05,
       onComplete: () => split.revert(),

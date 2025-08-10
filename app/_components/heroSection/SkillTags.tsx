@@ -1,5 +1,3 @@
-"use client";
-
 interface SkillTagsProps {
   skills: string[];
 }
@@ -9,10 +7,12 @@ export const SkillTags = ({ skills }: SkillTagsProps) => (
     {skills.map((skill, i) => (
       <span
         key={skill}
-        className="flex items-center gap-2 cursor-pointer transition-all duration-300 hover:text-white hover:-translate-y-1 hover:scale-105"
+        className="flex items-center gap-2 "
       >
-        <p>{skill}</p>
-        {i < skills.length - 1 && <div className="w-2 h-2 rounded-full bg-yellow"></div>}
+        <p className="cursor-pointer transition-all duration-300 hover:text-white hover:-translate-y-1 hover:scale-105">{skill}</p>
+        {i < skills.length - 1 && (
+          <div className="w-2 h-2 rounded-full bg-yellow"></div>
+        )}
       </span>
     ))}
   </div>

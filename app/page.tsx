@@ -53,6 +53,7 @@ export default function Home() {
   return (
     <div className="h-full w-full">
       
+      {/* home section */}
       <section ref={sectionRef} className="relative h-screen w-full">
         <div
           ref={heroRef}
@@ -68,8 +69,7 @@ export default function Home() {
           <AboutSection />
         </div>
       </section>
-
-      {/* Le reste du contenu */}
+      
       <ProjectSection />
       <ServiceSection />
       <ContactSection />
