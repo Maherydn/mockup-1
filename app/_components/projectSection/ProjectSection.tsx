@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ProjectCard } from "./ProjectCard";
 
@@ -11,6 +11,7 @@ interface Project {
   buttonLabel: string;
   containerClassName?: string;
   overlayOpacity?: string;
+  href: string;
 }
 
 // Données projets
@@ -24,6 +25,7 @@ const bigLeftProject: Project = {
   buttonLabel: "Show demo",
   containerClassName: "w-full h-60",
   overlayOpacity: "bg-black/70",
+  href: "https://risingconnectstudio.mg/demos/?demoId=18&article=113",
 };
 
 const leftSmallProjects: Project[] = [
@@ -37,6 +39,7 @@ const leftSmallProjects: Project[] = [
     buttonLabel: "Show demo",
     containerClassName: "w-1/2 min-w-0 h-full",
     overlayOpacity: "bg-black/10",
+    href: "https://risingconnectstudio.mg/view/template/theme_portfolio_next/template.html",
   },
   {
     id: "3",
@@ -48,6 +51,7 @@ const leftSmallProjects: Project[] = [
     buttonLabel: "Show code",
     containerClassName: "w-1/2 min-w-0 h-full",
     overlayOpacity: "bg-black/70",
+    href: "https://github.com/Maherydn/app-gestion-stagiaire-frontend",
   },
 ];
 
@@ -61,6 +65,7 @@ const rightProjectsBig: Project = {
   buttonLabel: "Show code",
   containerClassName: "w-full h-60",
   overlayOpacity: "bg-black/70",
+  href: "https://github.com/Maherydn/budget-tracker-frontend",
 };
 
 const rightSmallProjects: Project[] = [
@@ -74,6 +79,7 @@ const rightSmallProjects: Project[] = [
     buttonLabel: "Show code",
     containerClassName: "w-1/2 min-w-0 h-full",
     overlayOpacity: "bg-black/70",
+    href: "https://github.com/Maherydn/my-blog",
   },
   {
     id: "5",
@@ -85,6 +91,7 @@ const rightSmallProjects: Project[] = [
     buttonLabel: "Show code",
     containerClassName: "w-1/2 min-w-0 h-full",
     overlayOpacity: "bg-black/70",
+    href: "https://github.com/Maherydn/chat-on-front",
   },
 ];
 
