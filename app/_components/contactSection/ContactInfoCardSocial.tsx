@@ -7,17 +7,17 @@ const ContactInfoCardSocial = () => {
     {
       name: "LinkedIn",
       icon: <LinkedinIcon />,
-    url: "https://www.linkedin.com/in/mahery-daniel-96b711307/",
+      url: "https://www.linkedin.com/in/mahery-daniel-96b711307/",
     },
     {
       name: "GitHub",
       icon: <GithubIcon />,
-    url: "https://github.com/Maherydn",
+      url: "https://github.com/Maherydn",
     },
     {
       name: "Instagram",
       icon: <InstaIcon />,
-    url: "https://www.instagram.com/maherydaniel/",
+      url: "https://www.instagram.com/maherydaniel/",
     },
   ];
 
@@ -33,9 +33,11 @@ const ContactInfoCardSocial = () => {
             className="relative group cursor-pointer "
             onClick={() => window.open(social.url, "_blank")}
           >
-            <p className="duration-500 transition-transform transform-style-preserve-3d hover:rotate-y-360 h-full w-full">{social.icon}</p>
+            <p className="duration-500 transition-transform transform-style-preserve-3d hover:rotate-y-360 h-full w-full">
+              {social.icon}
+            </p>
             {/* Tooltip */}
-            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black/80 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+            <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-slate-900/80 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
               {social.name}
             </span>
           </div>

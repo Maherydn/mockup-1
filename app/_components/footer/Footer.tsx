@@ -30,7 +30,6 @@ const Footer = () => {
             key={name}
             className="cursor-pointer"
             onClick={() => window.open(url, "_blank")}
-            aria-label={name}
             title={name}
           >
             {icon}

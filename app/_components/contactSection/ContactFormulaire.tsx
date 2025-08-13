@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { useState } from "react";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
 const ContactFormulaire = () => {
   const [formData, setFormData] = useState({
@@ -19,29 +19,39 @@ const ContactFormulaire = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // emailjs
-    //   .send(
-    //     "service_ydqojc9", // Service ID EmailJS
-    //     "template_3ccsy1p", // Template ID EmailJS
-    //     {
-    //       name: formData.name,
-    //       email: formData.email,
-    //       message: formData.message,
-    //       to_email: "maherydn@gmail.com", // Destinataire final
-    //     },
-    //     "OF0N9BE5cfNcHS8yW" // Public Key EmailJS
-    //   )
-    //   .catch((error) => {
-    //     console.error(error);
-    //     alert("Erreur lors de l'envoi du message.");
-    //   });
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  emailjs
+    .send(
+      "service_ydqojc9",
+      "template_3ccsy1p",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        to_email: "maherydn@gmail.com",
+      },
+      "OF0N9BE5cfNcHS8yW"
+    )
+    .then(() => {
+      // alert("Message envoyé avec succès !");
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Erreur lors de l'envoi du message.");
+    })
+    .finally(() => {
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 1000); 
+    });
+};
+
 
   return (
-    <form onSubmit={handleSubmit}
-     className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-8">
       <div className="flex gap-4">
         <div className="flex flex-col gap-2">
           <label
@@ -51,6 +61,7 @@ const ContactFormulaire = () => {
             Name
           </label>
           <input
+            required
             id="name1"
             name="name"
             type="text"
@@ -69,6 +80,7 @@ const ContactFormulaire = () => {
             Email
           </label>
           <input
+            required
             id="email"
             name="email"
             type="email"
@@ -88,6 +100,7 @@ const ContactFormulaire = () => {
           Message
         </label>
         <textarea
+          required
           id="message"
           name="message"
           value={formData.message}
@@ -103,9 +116,15 @@ const ContactFormulaire = () => {
           type="submit"
           className="w-48 h-12 bg-yellow text-xl rounded-xl capitalize cursor-pointer hover:bg-yellow-300 duration-300 overflow-hidden"
         >
-          send message <span className={`inline-block transform transition-transform duration-300 ${
+          send message{" "}
+          <span
+            className={`inline-block transform transition-transform duration-300 ${
               isSubmitting ? "translate-x-10" : "translate-x-0"
-            }`}> &rarr; </span>
+            }`}
+          >
+            {" "}
+            &rarr;{" "}
+          </span>
         </button>
       </div>
     </form>
