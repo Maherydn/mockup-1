@@ -9,7 +9,7 @@ const contact = [
   },
   {
     title: "phone",
-    contact: "+26134094694",
+    contact: "+261 34 09 246 94",
   },
 ];
 
