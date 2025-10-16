@@ -17,15 +17,15 @@ interface Project {
 // Données projets
 const bigLeftProject: Project = {
   id: "1",
-  imageUrl: "/landing.jpg",
-  title: "Bijoux & deco",
+  imageUrl: "/management-stock.png",
+  title: "Management stock",
   description:
-    "The landing page highlights a delicious selection of chocolates, cakes and ice creams, with a neat presentation of the products.",
+    "Frontend interface developed exclusively with Next.js, without backend integration.",
   categories: ["design", "development"],
   buttonLabel: "Show demo",
   containerClassName: "w-full h-60",
   overlayOpacity: "bg-black/70",
-  href: "https://risingconnectstudio.mg/demos/?demoId=18&article=113",
+  href: "https://app.courses.maherydaniel.mg/dashboard/",
 };
 
 const leftSmallProjects: Project[] = [
@@ -57,15 +57,15 @@ const leftSmallProjects: Project[] = [
 
 const rightProjectsBig: Project = {
   id: "6",
-  imageUrl: "/budget-tracker.png",
+  imageUrl: "/app-courses.png",
   title: "Budget Tracker",
   description:
-    "A personal finance app that allows users to manage their income and expenses month by month...",
+    "MVP application for managing courses: lists products to buy and allows users to check them off once purchased.",
   categories: ["design", "development"],
-  buttonLabel: "Show code",
+  buttonLabel: "Show demo",
   containerClassName: "w-full h-60",
   overlayOpacity: "bg-black/70",
-  href: "https://github.com/Maherydn/budget-tracker-frontend",
+  href: "https://app.courses.maherydaniel.mg/",
 };
 
 const rightSmallProjects: Project[] = [
@@ -82,16 +82,16 @@ const rightSmallProjects: Project[] = [
     href: "https://github.com/Maherydn/my-blog",
   },
   {
-    id: "5",
-    imageUrl: "/chat.png",
-    title: "Chat",
+    id: "1",
+    imageUrl: "/landing.jpg",
+    title: "Bijoux & deco",
     description:
-      "An instant messaging app allows users to exchange messages in real time quickly and seamlessly...",
-    categories: ["development"],
-    buttonLabel: "Show code",
+      "The landing page highlights a delicious selection of chocolates, cakes and ice creams, with a neat presentation of the products.",
+    categories: ["design", "development"],
+    buttonLabel: "Show demo",
     containerClassName: "w-1/2 min-w-0 h-full",
     overlayOpacity: "bg-black/70",
-    href: "https://github.com/Maherydn/chat-on-front",
+    href: "https://risingconnectstudio.mg/demos/?demoId=18&article=113",
   },
 ];
 

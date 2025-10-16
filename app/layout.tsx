@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./_components/header/Header";
-import Footer from "./_components/footer/Footer";
+import ClientLayout from "./_components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -13,20 +12,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className="font-inter bg-[#1F1F1F] h-full w-full flex justify-center relative "
-      >
-        <Header />
-        <main className="h-fit lg:w-5xl w-full overflow-x-hidden ">
-          {children} 
-          <Footer />
-        </main>
+      <body className="font-inter bg-[#1F1F1F] h-full w-full flex justify-center relative overflow-y-hidden">
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

@@ -1,39 +1,69 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
+import { useLoadedStore } from "@/app/_store/useLoaded";
 
-gsap.registerPlugin(SplitText);
+const titles = ["Developer", "Designer", "Monitor"];
 
 const AnimatedTitle = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const changingRef = useRef<HTMLSpanElement>(null);
+  const { loaded } = useLoadedStore(); // récupère l'état global loaded
 
   useEffect(() => {
-    if (!titleRef.current) return;
+    if (!loaded || !changingRef.current) return; // n'exécute que si loaded = true
 
-    const split = new SplitText(titleRef.current, { type: "chars" });
+    let current = 0;
 
-    gsap.set(split.chars, { opacity: 0 });
+    const typeText = (text: string) => {
+      const chars = text.split("");
+      let index = 0;
 
-    gsap.to(split.chars, {
-      duration: 0.05,
-      opacity: 1,
-      ease: "power1.inOut",
-      stagger: 0.05,
-      onComplete: () => split.revert(),
-    });
+      return new Promise<void>((resolve) => {
+        const interval = setInterval(() => {
+          if (!changingRef.current) return;
 
-    return () => split.revert();
-  }, []);
+          changingRef.current.textContent = chars.slice(0, index + 1).join("");
+          index++;
+          if (index === chars.length) {
+            clearInterval(interval);
+            setTimeout(resolve, 1500); // pause prolongée avant effacement
+          }
+        }, 100); // vitesse de frappe
+      });
+    };
+
+    const deleteText = () => {
+      return new Promise<void>((resolve) => {
+        const interval = setInterval(() => {
+          if (!changingRef.current) return;
+
+          const content = changingRef.current.textContent || "";
+          changingRef.current.textContent = content.slice(0, content.length - 1);
+          if (content.length === 0) {
+            clearInterval(interval);
+            setTimeout(resolve, 300); // petite pause avant le prochain mot
+          }
+        }, 50); // vitesse de suppression
+      });
+    };
+
+    const animate = async () => {
+      while (true) {
+        const text = titles[current];
+        await typeText(text);
+        await deleteText();
+        current = (current + 1) % titles.length;
+      }
+    };
+
+    animate();
+  }, [loaded]);
 
   return (
-    <h2
-      ref={titleRef}
-      className="text-center lg:text-6xl text-3xl font-bold text-white/95 leading-snug w-full text-wrap"
-      aria-label={`Hey, I’m Daniel. A Creative Developer`}
-    >
-      Hey, I’m Daniel. <br />A Creative Developer
+    <h2 className="text-center lg:text-6xl text-3xl font-bold text-white/95 leading-snug w-full text-wrap">
+      Hey, I’m Daniel. <br />
+      A Creative <span ref={changingRef}></span>
+      <span className="inline-block w-1 h-12 bg-white ml-1 animate-blink"></span>
     </h2>
   );
 };
