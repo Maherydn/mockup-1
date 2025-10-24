@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useLoadedStore } from "@/app/_store/useLoaded";
 
-const titles = ["Developer", "Designer", "Monitor"];
+const titles = ["Developer", "Designer"];
 
 const AnimatedTitle = () => {
   const changingRef = useRef<HTMLSpanElement>(null);
@@ -63,7 +63,7 @@ const AnimatedTitle = () => {
     <h2 className="text-center lg:text-6xl text-3xl font-bold text-white/95 leading-snug w-full text-wrap">
       Hey, I’m Daniel. <br />
       A Creative <span ref={changingRef}></span>
-      <span className="inline-block w-1 h-12 bg-white ml-1 animate-blink"></span>
+      <span className="inline-block w-1 lg:h-12 h-6 bg-white ml-1 animate-blink"></span>
     </h2>
   );
 };

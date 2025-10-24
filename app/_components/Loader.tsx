@@ -15,7 +15,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 
     // GSAP ticker pour une progression fluide
     const ticker = gsap.ticker.add(() => {
-      p += 1.5; // ajuste la vitesse ici (1.5 = rapide)
+      p += 0.5; // ajuste la vitesse ici (0.5 = rapide)
       setProgress(Math.min(Math.round(p), 100));
 
       if (p >= 100) {
@@ -23,7 +23,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
         gsap.ticker.remove(ticker);
         gsap.to(progressRefValue, {
           opacity: 0,
-          duration: 0.5,
+          duration: 1,
           onComplete,
         });
       }

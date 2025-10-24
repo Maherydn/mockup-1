@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Loader from "./Loader";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
@@ -35,7 +35,7 @@ export default function ClientLayout({
         }`}
       >
         <Header />
-        <main className="h-fit lg:w-5xl w-full overflow-x-hidden">
+        <main className="h-fit lg:w-5xl w-full overflow-x-hidden px-2 ">
           {children}
         </main>
         <Footer />

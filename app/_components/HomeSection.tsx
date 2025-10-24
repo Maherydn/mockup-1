@@ -22,6 +22,7 @@ const HomeSection = () => {
           end: "+=1500", // durée du scroll
           scrub: true,
           pin: true,
+          pinType: 'fixed'
         },
       });
 
